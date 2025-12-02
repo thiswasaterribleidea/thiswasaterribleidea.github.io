@@ -1,1 +1,75 @@
-<script src="https://raw.githubusercontent.com/car-axle-client/car-axle-client/main/dist/build.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  /* this is what you get for forcing me to lie about liking any of the labs */
+  .growingText {
+    transition: font-size 0.5s ease-out; 
+    font-size: 16px; /* Starting font size */
+    display: inline-block;
+  }
+</style>
+</head>
+<body>
+
+<p class="growingText">This is my home page. My name is Bryan Rivero, I am a student at <a href="http://www.fullerton.edu/">Cal State Fullerton</a>, and my major is Computer Engineering.</p>
+<br>
+<h1 class="growingText">Hello World</h1>
+<br>
+<h2 class="growingText">Computer Science Projects</h2>
+<br>
+<p class="growingText">My GitHub page is <a href="http://github.com/thiswasaterribleidea">http://github.com/thiswasaterribleidea</a>.</p>
+<br>
+<h3 class="growingText">CPSC 120</h3>
+<br>
+ <ul class="growingText">
+  <li>Lab 12
+    <ul>
+      <li>Lab 12 was honestly the only lab I had any interest in.</li>
+    </ul>
+  <li>Lab 4
+    <ul>
+      <li>Lab 4, part 1 was only notable because it involved converting milliliters to other units, something which I had conveniently already made a tool to do as part of a personal project involving unit conversions. I was able to reuse most of the code from that project for this lab. Learning objectives were declaring and initialising double variables and using cout and cin to read the number of milliliters from <a href=https://github.com/cpsc-fall-2025/cpsc-120-lab-04-dingus-bryan-and-prisma/blob/main/part-1/README.md#:~:text=Use%20cout%20and%20cin%20to%20read%20the%20number%20of%20milliliters%20from%20stantard%20input%2C%20with%20a%20prompt>"standart input"</a>, whatever that's supposed to be.</li>
+      <li>Green tea</li>
+    </ul>
+  </li>
+  <li>Lab 5</li>
+</ul> 
+</p>
+
+<script>
+  const textElements = document.getElementsByClassName('growingText');
+  const growthFactor = 1.01;
+  const shrinkFactor = 0.99;
+  const intervalTime = 10;
+  const maxSize = 60;
+  const minSize = 20;
+  let growing = true;
+  function makeTextPulse() {
+    for (let i = 0; i < textElements.length; i++) {
+        const element = textElements[i];
+        let currentFontSize = parseFloat(window.getComputedStyle(element).fontSize);
+        if (growing) {
+            currentFontSize *= (1 + (growthFactor - 1) * (maxSize / currentFontSize));
+            if (currentFontSize >= maxSize) {
+                currentFontSize = maxSize;
+                growing = false;
+            }
+        } else {
+            currentFontSize *= (1 - (1 - shrinkFactor) * (currentFontSize / minSize));
+            if (currentFontSize <= minSize) {
+                currentFontSize = minSize;
+                growing = true;
+            }
+        }
+        element.style.fontSize = currentFontSize + 'px';
+    }
+  }
+  const growthInterval = setInterval(makeTextPulse, intervalTime);
+</script>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/LylSRH_wdDA?autoplay=1">
+</iframe> 
+
+</body>
+</html>
