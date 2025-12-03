@@ -42,9 +42,9 @@
 
 <script>
   const textElements = document.getElementsByClassName('growingText');
-  const growthFactor = 1.0001;
-  const shrinkFactor = 0.9999;
-  const intervalTime = 10000;
+  const growthFactor = 1.001;
+  const shrinkFactor = 0.999;
+  const intervalTime = 100;
   const maxSize = 60;
   const minSize = 20;
   let growing = true;
@@ -70,7 +70,7 @@
   }
   const growthInterval = setInterval(makeTextPulse, intervalTime);
 </script>
-<iframe width="420" height="315"
+<iframe width="42" height="31.5"
 src="https://www.youtube.com/embed/LylSRH_wdDA?autoplay=1">
 </iframe> 
 
