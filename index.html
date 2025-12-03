@@ -5,7 +5,7 @@
   /* this is what you get for forcing me to lie about liking any of the labs */
   .growingText {
     transition: font-size 0.5s ease-out; 
-    font-size: 16px; /* Starting font size */
+    font-size: 8px; /* Starting font size */
     display: inline-block;
   }
 </style>
@@ -34,7 +34,7 @@
   </li>
   <li>Lab 5</li>
     <ul>
-      <li>Lab 4, part 1 was only notable because it involved converting milliliters to other units, something which I had conveniently already made a tool to do as part of a personal project involving unit conversions. I was able to reuse most of the code from that project for this lab. Learning objectives were declaring and initialising double variables and using cout and cin to read the number of milliliters from <a href=https://github.com/cpsc-fall-2025/cpsc-120-lab-04-dingus-bryan-and-prisma/blob/main/part-1/README.md#:~:text=Use%20cout%20and%20cin%20to%20read%20the%20number%20of%20milliliters%20from%20stantard%20input%2C%20with%20a%20prompt>"standart input"</a>, whatever that's supposed to be.</li>
+      <li>Lab 5, part 2's learning goals were performing calculations using floating point (double or float) and integer types (int) where needed. As with Lab 4, part 1, this was something I had already tinkered with and therefore managed to complete this lab fairly quickly, which is the only reason why I've noted it here. Beyond that, it was just as unremarkable as every other lab.</li>
     </ul>
   </li>
 </ul> 
@@ -42,9 +42,9 @@
 
 <script>
   const textElements = document.getElementsByClassName('growingText');
-  const growthFactor = 1.01;
-  const shrinkFactor = 0.99;
-  const intervalTime = 10;
+  const growthFactor = 1.0001;
+  const shrinkFactor = 0.9999;
+  const intervalTime = 10000;
   const maxSize = 60;
   const minSize = 20;
   let growing = true;
